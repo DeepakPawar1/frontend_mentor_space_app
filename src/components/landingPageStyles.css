@@ -1,0 +1,253 @@
+.main{
+    height: 100vh;
+    background-image: url('../assets/images/Bitmap.jpg');
+    background-size:cover ;
+    background-repeat: no-repeat;
+    
+}
+
+.logo img{
+    padding-top: 12px;
+    height: 48px;
+    width: 48px;
+}
+
+.navbar{
+    padding-top: 40px;
+    padding-left: 55px;
+    display: flex;
+    justify-content: flex-start;
+    
+    
+
+}
+.logo{
+    flex:1.5;
+    /* background:red; */
+}
+.content{
+    flex:2;
+    padding-left: 20%;
+    backdrop-filter: blur(150px) ;
+    display: flex;
+    align-items: center;
+    
+      
+}
+.content ul{
+    display: flex;
+    gap: 2.5rem;
+    color: white;
+    counter-reset: ul-counter;
+}
+.content li{
+    list-style: none;
+    cursor: pointer;
+    font-family:'Barlow Condensed';
+    font-size: 16px;
+    counter-increment: ul-counter;
+}
+.content li::before {
+    content: counter(ul-counter);
+}
+
+.border{
+    position:relative;
+}
+.border:hover::after{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 0;    
+    left:0;
+    bottom:-20px; /*Change this to increase/decrease distance*/
+    border-bottom: 3px solid #ffffff;  
+}
+
+.main-content{
+    display: flex;
+    /* flex-direction: column; */
+}
+.left{
+    flex:1;
+    
+}
+.right{flex:1;display:flex;flex-direction: column;justify-content: flex-end;}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 20%;
+    width: 382px;
+    height:450px;
+
+}
+.container :nth-of-type(1){
+    font-family: var(--f-family-barcon);
+    font-size: var(--f-size-med);
+    color:var(--f-color-offwhite);
+}
+
+.container :nth-of-type(2){
+    font-family: var(--f-family-bellf);
+    font-size: 100px;
+    color:var(--f-color-offwhite);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.container :nth-of-type(3){
+    font-family: var(--f-family-bar);
+    font-size: var(--f-size-small-200);
+    color:var(--f-color-offwhite);
+    margin-top: 12px;
+    width:80%;
+}
+.circle{
+    background: #ffffff;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-left: 45%;
+    margin-bottom: 5%;
+    text-align: center;
+    position:relative;
+}
+
+.exp{
+    position:absolute;
+    top:30%;
+    left:25%;
+    font-size: 20px;
+}
+.ham{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+
+.main{
+    position:relative;
+background-image: url('../assets/images/TabletHome.jpg');
+background-size:100% 100vh;
+background-repeat: no-repeat;
+}
+.navbar{
+    padding-top: 0px;;
+    padding-left: 55px;
+    display: flex;
+    justify-content: flex-start;
+    
+    
+
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0%;
+    /* width: 0%; */
+    height:auto;
+
+}
+.container :nth-of-type(1){
+
+    font-size: 20px;
+    margin:0;
+   
+}
+
+.container :nth-of-type(2){
+    font-size: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.container :nth-of-type(3){
+    font-size: 16px;
+    margin-top: 0px;
+    width:80%;
+}
+.circle{
+    margin-left: 0%;
+}
+.left{
+    margin-top: 10%;
+}
+.right{
+    margin-top: 10%;
+}
+.content{
+    
+    padding-left: 5%;
+    padding-right:5%;      
+}
+.content ul{
+    gap: .8rem;
+}
+.content li{
+    /* font-size: 14px; */
+}
+}
+
+@media screen and (max-width: 375px){
+
+    .navbar .content{
+    position:absolute;
+    backdrop-filter: blur(150px) ;
+    height:100vh;
+    right:0%;
+    z-index: 2;
+    width: 50%;
+}
+
+
+    .navbar .content > ul{
+        position: absolute;
+        flex-direction: column;
+        left:0;
+        top:10%;
+    }
+    .ham{
+        position: absolute;
+        display: unset;
+        z-index:4;
+        top:0;
+        right:0;
+        padding:1rem;
+        cursor:pointer;
+    }
+    .notactive{
+        display: none;
+    }
+    .nocontent{
+        display:none;
+    }
+    .container{
+        /* padding-left: 1.5%;
+        padding-right: 1.5%; */
+
+    }
+    .container :nth-of-type(1){
+
+        font-size: 18px;
+        margin:0;
+       
+    }
+    
+    .container :nth-of-type(2){
+        font-size: 80px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .container :nth-of-type(3){
+        font-size: 12px;
+        margin-top: 0px;
+        width:327px;
+    }
+}
